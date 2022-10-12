@@ -1,0 +1,103 @@
+{
+  "Description": "",
+  "Models": {
+    "model_1": {
+      "module": "sklearn.ensemble",
+      "object": "GradientBoostingRegressor",
+      "parameters": {
+        "n_estimators": 100
+      }
+    },
+    "model_2": {
+      "module": "sklearn.ensemble",
+      "object": "RandomForestRegressor",
+      "parameters": {
+        "n_estimators": 100
+      }
+    },
+      "model_3": {
+      "module": "src.models",
+      "object": "BoostedForest",
+      "parameters": {
+        "n_layers": 5,
+        "learning_rate": 0.8,
+        "n_trees": 20
+      }
+    }
+  },
+  "Experiments": [
+    {
+      "module": "src.experiments",
+      "object": "BootstrapModelTest",
+      "parameters": {
+        "n_runs": 200,
+        "n_bins": 50
+      }
+    }
+  ],
+  "Datasets": [
+    {
+      "name": "NavalVessel",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00316/UCI%20CBM%20Dataset.zip",
+      "function": "read_csv",
+      "file": "data/UCI_CBM_Dataset.csv",
+      "sep": ","
+    },
+    {
+      "name": "Cargo2000",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00382/c2k_data_comma.csv",
+      "function": "read_csv",
+      "file": "data/c2k_data_comma.csv",
+      "sep": ","
+    },
+    {
+      "name": "BikeSales",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00560/SeoulBikeData.csv",
+      "function": "read_csv",
+      "file": "data/SeoulBikeData.csv",
+      "sep": ","
+    },
+    {
+      "name": "Temperature",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00514/Bias_correction_ucl.csv",
+      "function": "read_csv",
+      "file": "data/Bias_correction_ucl.csv",
+      "sep": "\\s+"
+    },
+    {
+      "name": "Superconduct",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00464/superconduct.zip",
+      "function": "read_csv",
+      "file": "data/superconduct.csv",
+      "sep": ","
+    },
+    {
+      "name": "Wine",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",
+      "function": "read_csv",
+      "file": "data/wine_red.csv",
+      "sep": ";"
+    },
+    {
+      "name": "Concrete",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/concrete/compressive/Concrete_Data.xls",
+      "function": "read_excel",
+      "file": "data/concrete.csv",
+      "sep": ","
+    },
+    {
+      "name": "Parkinson",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/parkinsons/telemonitoring/parkinsons_updrs.data",
+      "function": "read_csv",
+      "file": "data/parkinson.csv",
+      "sep": ","
+    },
+    {
+      "name": "Obesity",
+      "url": "https://archive.ics.uci.edu/ml/machine-learning-databases/00316/UCI%20CBM%20Dataset.zip",
+      "function": "read_csv",
+      "file": "data/ObesityDataSet_raw_and_data_sinthetic.csv",
+      "sep": ","
+    }
+  ]
+}
