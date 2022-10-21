@@ -10,15 +10,34 @@ This repo contains the soruce code of the Boosted Forest algorithm. The pretrain
 $ pip install -r requirements.txt
 ```
 
-## Execution
+## Experiments Execution
 
 The  execution of this project performs a set of experiments to compare the metric results of `BoostedForest` with `GradientBoosting` in 200 experiments over a set of 4 datasets. The experiment configuration can be found in the file `config.json`
 
 ```
 $ python run_experiments.py
 ```
-
 The results of the experiments are save in the directory `results/`
+
+
+## Quick Start
+
+You can run the model over another dataset as follows
+
+```python
+from sklearn.datasets import load_wine
+
+X,y=load_wine(return_X_y=True)
+
+model = BoostedForest(n_layers=10, n_trees=10)
+model.fit(X[0:-5,:],y[0:-5])
+
+model.predict(X[-5:,:])
+```
+
+```
+array([1.60187112, 1.61052181, 1.51189302, 1.44837233, 1.63621279])
+```
 
 
 ## Data
