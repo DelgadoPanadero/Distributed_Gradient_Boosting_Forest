@@ -26,6 +26,7 @@ You can run the model over another dataset as follows
 
 ```python
 from sklearn.datasets import load_wine
+from src.models import BoostedForest
 
 X,y=load_wine(return_X_y=True)
 
